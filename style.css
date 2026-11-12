@@ -142,7 +142,7 @@ h1, h2 {
 
 .hero-visual {
   width: 100%;
-  max-width: 1440px; /* ← これで 1440px（や 1600px）が本当に反映されるようになるよ！ */
+  max-width: 100%; /* ← これで 1440px（や 1600px）が本当に反映されるようになるよ！ */
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
