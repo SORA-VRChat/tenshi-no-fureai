@@ -529,3 +529,66 @@ dialog img {
   color: var(--text-light);
   margin-bottom: 0.5rem;
 }
+/* Informationページ：リクイン・オープン時間ボックス */
+.time-info-box {
+  background: #f8fcff;
+  border: 2px dashed var(--border-soft);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed var(--border-soft);
+}
+
+.time-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.day-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  min-width: 64px;
+  text-align: center;
+}
+
+.day-badge.weekday {
+  background: #d6ecfa;
+  color: #3b6998;
+}
+
+.day-badge.holiday {
+  background: var(--accent-yellow);
+  color: #7c6218;
+}
+
+.time-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.time-item strong {
+  color: #4a6fa5;
+  font-size: 1.08rem;
+  margin-left: 0.3rem;
+}
+
+.time-arrow {
+  color: var(--accent-blue);
+  font-size: 0.75rem;
+}
