@@ -707,3 +707,50 @@ main h2 {
   color: #5aa9e6;
   font-size: 1.1rem;
 }
+/* ==========================================
+   フッター完全修正版（3行中央寄せ＆SNSボタンの角丸枠）
+   ========================================== */
+footer {
+  text-align: center !important;
+  padding: 3rem 5% !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-top: 2px dashed var(--border-soft) !important;
+  font-size: 0.9rem !important;
+  color: var(--text-light) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.8rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+footer p,
+footer div,
+.footer-sns {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+footer a,
+.sns-btn {
+  display: inline-block !important;
+  background: #ffffff !important;
+  color: #4a6fa5 !important;
+  border: 2px solid var(--accent-blue) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  padding: 0.45rem 1.4rem !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 12px rgba(126, 200, 227, 0.25) !important;
+  text-decoration: none !important;
+  margin: 0.3rem auto !important;
+}
+
+footer a:hover,
+.sns-btn:hover {
+  background: var(--accent-blue) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
