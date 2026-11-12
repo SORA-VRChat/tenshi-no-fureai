@@ -1121,3 +1121,31 @@ a.cast-card:hover .cast-info {
   display: block;
   flex-shrink: 0;
 }
+/* 1. カード同士の間に可愛いすき間（余白）を空ける */
+.discover-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem !important; /* ここでカード同士の間隔を調整できます（もっと広げたいときは 2rem にしてね） */
+}
+
+/* 2. ディスカバーカード全体の形と余白を整える */
+.discover-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 1.5rem 2rem !important;
+  box-shadow: 0 8px 24px rgba(126, 200, 227, 0.15) !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 3. 数字の画像の大きさを綺麗にキープする */
+.num-img {
+  width: 56px !important;  /* 01の画像サイズ */
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
