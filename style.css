@@ -538,3 +538,46 @@ main h2 {
   border-radius: 16px;
   padding: 0.85rem 1.4rem;
   margin
+
+  /* ==========================================
+   フッター（3行を真ん中に＆公式Xの角丸ボタン枠）
+   ========================================== */
+footer {
+  text-align: center !important;
+  padding: 2.5rem 5%;
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 2px dashed var(--border-soft);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.footer-sns {
+  margin: 0.4rem 0;
+}
+
+/* 2行目の公式Xの角丸ボタン枠 */
+.sns-btn,
+footer a {
+  display: inline-block;
+  background: #ffffff;
+  color: #4a6fa5;
+  border: 2px solid var(--accent-blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.45rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(126, 200, 227, 0.25);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.sns-btn:hover,
+footer a:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
