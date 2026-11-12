@@ -991,3 +991,18 @@ main h2 {
     margin-top: 0.2rem;
   }
 }
+/* タイトルまわりのコンテナ */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* タイトル下のハートのライン画像 */
+.section-line {
+  display: block;
+  max-width: 280px; /* お好みに合わせてサイズを調整してね (例: 220px〜320px) */
+  width: 100%;
+  height: auto;
+  margin: 0.8rem auto 0; /* 文字との絶妙な余白 */
+  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25)); /* ふんわりとした影をつける場合 */
+}
