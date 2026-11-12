@@ -1042,8 +1042,25 @@ main h2 {
   margin: -10px auto 0; /* マイナスの数値で上の文字にグッと近づけています */
   filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
 }
-/* informationページなどの背景を白にする設定 */
-body.white-page {
-  background: #ffffff !important;
-  background-image: none !important;
+/* キャストカードの文字枠を heart_frame.png に差し替え */
+.cast-info {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important; /* 元の白い背景を透明にする */
+  background-image: url('assets/heart_frame.png'); /* フレーム画像を指定 */
+  background-size: 100% 100%; /* カードの大きさに合わせてぴったり伸ばす */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none !important; /* 元の枠線を消す */
+  box-shadow: none !important; /* 元の四角い影を消す */
+  filter: drop-shadow(0 8px 18px rgba(126, 200, 227, 0.22)); /* 画像の形に沿ったふんわり影 */
+  padding: 2.2rem 1.4rem 2.2rem; /* ハートに文字がかぶらないよう上下の余白を広めに調整 */
+}
+
+/* ホバーしたときの影も画像に沿わせる */
+a.cast-card:hover .cast-info {
+  box-shadow: none !important;
+  filter: drop-shadow(0 12px 24px rgba(126, 200, 227, 0.35));
 }
