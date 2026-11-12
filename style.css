@@ -878,11 +878,13 @@ body::after {
     text-align: center;
     padding: 1.2rem;
   }
-  .vrchat-btn-slim {
+ .vrchat-btn-slim {
     width: 100%;
     justify-content: center;
     margin-top: 0.2rem;
   }
+}
+  
 /* ==========================================
    VRChatグループカード（スリム版）のスタイル
    ========================================== */
