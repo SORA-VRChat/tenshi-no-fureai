@@ -137,7 +137,7 @@ h1, h2 {
   margin-left: calc(50% - 50vw);   /* mainの左右余白を無視して左端まで広げる魔法！ */
   margin-right: calc(50% - 50vw);  /* 右端まで広げる魔法！ */
   box-sizing: border-box;
-  z-index: 2000;                   /* レースよりも手前にする */
+  z-index: 200;                   /* レースよりも手前にする */
 }
 
 .hero-visual {
