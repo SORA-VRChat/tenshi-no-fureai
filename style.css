@@ -1026,3 +1026,19 @@ main h2 {
 .role-kokonon { background: #956DAF; }  /* ここのん */
 .role-pibi { background: #add8e6; }     /* ぴび */
 .role-ruru { background: #ff69b4; }     /* 宇宙るる */
+
+/* 「天使メイド紹介」の下の余白をギュッと詰める */
+.section-header h2,
+main h2 {
+  margin-bottom: 0.3rem;
+}
+
+/* タイトル下のハートのライン画像をさらに上へ近づける */
+.section-line {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: -10px auto 0; /* マイナスの数値で上の文字にグッと近づけています */
+  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
+}
