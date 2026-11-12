@@ -1115,7 +1115,7 @@ a.cast-card:hover .cast-info {
 
 /* 2. 数字の画像サイズを丁度よく大きく調整する */
 .num-img {
-  width: 52px !important;  /* ここで数字の大きさを調整できます（大きくしたい場合は数値を増やしてね） */
+  width: 64px !important;  /* ここで数字の大きさを調整できます（大きくしたい場合は数値を増やしてね） */
   height: auto !important;
   object-fit: contain;
   display: block;
