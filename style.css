@@ -497,3 +497,114 @@ a.cast-card:hover .cast-info {
 .back-btn:hover {
   opacity: 0.85;
 }
+/* キャストカードのリンク化＆ホバー演出 */
+a.cast-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
+}
+
+a.cast-card:hover {
+  transform: translateY(-6px);
+}
+
+a.cast-card:hover .cast-info {
+  box-shadow: 0 12px 26px rgba(126, 200, 227, 0.28);
+}
+
+/* キャスト個人詳細ページ */
+.cast-detail {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cast-detail-img {
+  display: flex;
+  justify-content: center;
+}
+
+.cast-detail-img img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto -32px;
+  display: block;
+  position: relative;
+  z-index: 0;
+  filter: drop-shadow(0 8px 16px rgba(126, 200, 227, 0.3));
+}
+
+.cast-detail-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 8px 20px rgba(126, 200, 227, 0.15);
+}
+
+.cast-detail-card h2 {
+  font-size: 1.7rem;
+  color: #4a6fa5;
+  margin: 0.5rem 0;
+}
+
+.cast-detail-lead {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.cast-profile-list {
+  text-align: left;
+  background: #f8fcff;
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border-soft);
+  font-size: 0.92rem;
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-row span:first-child {
+  font-weight: 700;
+  color: #4a6fa5;
+}
+
+.profile-row a {
+  color: #5ea8c9;
+  text-decoration: none;
+}
+
+.cast-message {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+
+.back-btn {
+  display: inline-block;
+  background: var(--accent-yellow);
+  color: #7c6218;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.back-btn:hover {
+  opacity: 0.85;
+}
