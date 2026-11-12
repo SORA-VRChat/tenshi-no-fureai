@@ -581,26 +581,72 @@ footer a:hover {
   color: #ffffff;
   transform: translateY(-2px);
 }
-/* Informationページ：時間ボックス（584行目からここを貼り付けてね！） */
+/* Informationページ：時間ボックス（横幅をスリムにして中央に！） */
 .time-info-box {
   background: #f8fcff;
   border: 2px dashed var(--border-soft);
   border-radius: 16px;
-  padding: 0.85rem 1.4rem;
-  margin: 0.8rem 0 1.5rem;
-  display: inline-flex;
+  padding: 1rem 1.8rem;
+  margin: 1rem auto 1.5rem;     /* 左右のmarginをautoにして中央寄せ！ */
+  display: flex;                /* inline-flex から変更して中央に収まりやすくする */
   flex-direction: column;
-  gap: 0.7rem;
-  max-width: 100%;
+  gap: 0.8rem;
+  width: 100%;                  /* 幅の基準 */
+  max-width: 480px;             /* 横幅が広がりすぎないように最大幅を制限！ */
+  box-sizing: border-box;
 }
 
 .time-row {
   display: flex;
   align-items: center;
+  justify-content: center;      /* 中身の要素も真ん中寄りに揃える */
   flex-wrap: wrap;
   gap: 0.8rem 1.2rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px dashed var(--border-soft);
+}
+
+.time-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.day-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  min-width: 64px;
+  text-align: center;
+}
+
+.day-badge.weekday {
+  background: #d6ecfa;
+  color: #3b6998;
+}
+
+.day-badge.holiday {
+  background: var(--accent-yellow);
+  color: #7c6218;
+}
+
+.time-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.time-item strong {
+  color: #4a6fa5;
+  font-size: 1.08rem;
+  margin-left: 0.3rem;
+}
+
+.time-arrow {
+  color: var(--accent-blue);
+  font-size: 0.75rem;
 }
 
 .time-row:last-child {
