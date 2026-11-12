@@ -1079,3 +1079,18 @@ a.cast-card:hover .cast-info {
   margin: -10px auto -12px; /* 最後の「-12px」で下の文章との距離を詰めています */
   filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
 }
+/* 01〜04の数字画像を綺麗で可愛いサイズに調整する */
+.num-img {
+  width: 32px !important;  /* 横幅をすっきり小さく固定 */
+  height: auto !important; /* 縦横比を崩さない */
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;          /* 画像が縮んで変形するのを防ぐ */
+}
+
+/* ディスカバーカードのレイアウトを整える */
+.discover-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
