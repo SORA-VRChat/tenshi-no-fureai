@@ -110,14 +110,13 @@ main {
 }
 
 .en-label {
+  display: block;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   color: #5aa9e6;
-  text-transform: uppercase;
   text-align: center;
-  display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 h1, h2 {
@@ -126,11 +125,15 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
-/* ヒーローセクション（Top） */
+/* ヒーローセクション（Top）＆ 大きくなったヒーロー画像 */
 .hero {
   text-align: center;
   padding: 3rem 1rem 4rem;
   position: relative;
+  width: 100%;
+  max-width: 1000px; /* メイン幅いっぱいに広げる */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hero-badge {
@@ -146,17 +149,21 @@ h1, h2 {
 }
 
 .hero-visual {
-  max-width: 280px;
+  width: 100%;
+  max-width: 850px; /* ← ここで両サイドに少し余る絶妙な大きさに調整！ */
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 1rem;
 }
 
 .hero-visual img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
   display: block;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(126, 200, 227, 0.2);
 }
 
 .hero h1 {
@@ -225,55 +232,62 @@ h1, h2 {
   box-shadow: 0 8px 18px rgba(126, 200, 227, 0.35);
 }
 
-/* DISCOVER（01〜04ナビゲーション） */
-.discover-list {
+/* DISCOVER（01〜04ナビゲーション：スリムな白枠＆大きめ数字画像） */
+.discover-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem !important;
 }
 
-.discover-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--card-bg);
-  padding: 1.2rem 1.8rem;
-  border-radius: 18px;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 15px rgba(126, 200, 227, 0.12);
+.discover-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  border: 2px solid #fff !important;
+  padding: 1.1rem 1.8rem !important; /* スリムですっきりした白枠の厚み */
+  box-shadow: 0 6px 20px rgba(126, 200, 227, 0.12) !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.discover-item:hover {
-  transform: translateX(6px);
-  background: #fff;
-  border-color: var(--accent-yellow);
+.discover-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(126, 200, 227, 0.22) !important;
+  border-color: var(--accent-yellow) !important;
 }
 
-.discover-left {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+.num-img {
+  width: 54px !important; /* 01〜04の数字画像の可愛い大きさ */
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-.discover-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #f4b942;
+.discover-info {
+  flex: 1;
 }
 
 .discover-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-family: 'Quicksand', 'Zen Maru Gothic', sans-serif !important;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #4a6fa5;
   display: block;
   line-height: 1.2;
 }
 
-.discover-sub {
-  font-size: 0.85rem;
+.discover-desc {
+  font-family: 'Quicksand', 'Zen Maru Gothic', sans-serif !important;
+  font-size: 0.88rem;
   color: var(--text-light);
+}
+
+.arrow {
+  color: #5aa9e6;
+  font-size: 1.1rem;
 }
 
 /* キャストグリッド */
@@ -288,6 +302,9 @@ h1, h2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
 }
 
 .cast-card img {
@@ -301,27 +318,50 @@ h1, h2 {
   filter: drop-shadow(0 6px 12px rgba(126, 200, 227, 0.25));
 }
 
+/* キャストカードの文字枠を heart_frame.png に適用 */
 .cast-info {
   width: 100%;
   flex: 1;
   position: relative;
   z-index: 2;
-  background: #ffffff;
-  border-radius: 20px;
-  border: 2px solid #fff;
-  padding: 1.2rem 1.2rem 1.5rem;
-  box-shadow: 0 8px 20px rgba(126, 200, 227, 0.15);
+  background-color: transparent !important;
+  background-image: url('assets/heart_frame.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 8px 18px rgba(126, 200, 227, 0.22));
+  padding: 2.2rem 1.4rem 2.2rem;
+}
+
+a.cast-card:hover {
+  transform: translateY(-6px);
+}
+
+a.cast-card:hover .cast-info {
+  box-shadow: none !important;
+  filter: drop-shadow(0 12px 24px rgba(126, 200, 227, 0.35));
 }
 
 .cast-role {
   display: inline-block;
-  background: var(--accent-yellow);
-  color: #7c6218;
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.2rem 0.8rem;
   border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
+
+.role-nemu { background: #cd5c5c; }
+.role-kisara { background: var(--accent-yellow, #ffe066); color: #ffffff; }
+.role-sora { background: #1e90ff; }
+.role-anyu { background: #00ced1; }
+.role-kurage { background: #87ceeb; }
+.role-kokonon { background: #956DAF; }
+.role-pibi { background: #add8e6; }
+.role-ruru { background: #ff69b4; }
 
 .cast-name {
   font-size: 1.25rem;
@@ -344,21 +384,6 @@ h1, h2 {
 .cast-desc {
   font-size: 0.9rem;
   color: var(--text-light);
-}
-
-/* キャストカードのリンク化＆ホバー演出 */
-a.cast-card {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.25s ease;
-}
-
-a.cast-card:hover {
-  transform: translateY(-6px);
-}
-
-a.cast-card:hover .cast-info {
-  box-shadow: 0 12px 26px rgba(126, 200, 227, 0.28);
 }
 
 /* キャスト個人詳細ページ */
@@ -439,11 +464,6 @@ a.cast-card:hover .cast-info {
   color: #4a6fa5;
 }
 
-.profile-row a {
-  color: #5ea8c9;
-  text-decoration: none;
-}
-
 .cast-message {
   font-size: 0.95rem;
   line-height: 1.8;
@@ -489,110 +509,34 @@ a.cast-card:hover .cast-info {
   font-size: 0.9rem;
 }
 
-/* フッター */
-footer {
+/* タイトルまわりのコンテナ・ハートライン */
+.section-header {
   text-align: center;
-  padding: 2rem 5%;
-  background: rgba(255, 255, 255, 0.7);
-  border-top: 2px dashed var(--border-soft);
-  font-size: 0.9rem;
-  color: var(--text-light);
+  margin-bottom: 0.8rem;
 }
 
-/* 画像拡大モーダル */
-dialog {
-  margin: auto;
-  border: none;
-  border-radius: 16px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-dialog::backdrop {
-  background: rgba(74, 111, 165, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-dialog img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 10px;
-  display: block;
-}
-
-.dialog-hint {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-}
-/* Informationページ：リクイン・オープン時間ボックス */
-.time-info-box {
-  background: #f8fcff;
-  border: 2px dashed var(--border-soft);
-  border-radius: 16px;
-  padding: 1rem 1.4rem;
-  margin: 1rem 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.time-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px dashed var(--border-soft);
-}
-
-.time-row:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.day-badge {
-  font-size: 0.85rem;
+.section-header h2,
+main h2 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 26px;
   font-weight: 700;
-  padding: 0.25rem 0.9rem;
-  border-radius: 999px;
-  min-width: 64px;
-  text-align: center;
-}
-
-.day-badge.weekday {
-  background: #d6ecfa;
-  color: #3b6998;
-}
-
-.day-badge.holiday {
-  background: var(--accent-yellow);
-  color: #7c6218;
-}
-
-.time-items {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.8rem;
-  font-size: 0.95rem;
-}
-
-.time-item strong {
   color: #4a6fa5;
-  font-size: 1.08rem;
-  margin-left: 0.3rem;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 220, 240, 0.5);
 }
 
-.time-arrow {
-  color: var(--accent-blue);
-  font-size: 0.75rem;
+.section-line {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: -10px auto -12px;
+  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
 }
-/* Informationページ：リクイン・オープン時間ボックス */
+
+/* Informationページ：時間ボックス */
 .time-info-box {
   background: #f8fcff;
   border: 2px dashed var(--border-soft);
@@ -657,6 +601,82 @@ dialog img {
   font-size: 0.75rem;
 }
 
+/* VRChatリンクカード（スリム版） */
+.vrchat-card-slim {
+  background: var(--card-bg, rgba(255, 255, 255, 0.85));
+  border: 2px solid #fff;
+  border-radius: 18px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: 0 4px 15px rgba(126, 200, 227, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vrchat-card-slim:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(126, 200, 227, 0.25);
+  border-color: var(--accent-yellow, #ffe066);
+}
+
+.vrchat-icon-slim {
+  font-size: 1.5rem;
+  background: var(--bg-blue, #eaf6ff);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 4px rgba(126, 200, 227, 0.3);
+}
+
+.vrchat-content-slim {
+  flex: 1;
+}
+
+.vrchat-card-slim .vrchat-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #5aa9e6;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.vrchat-card-slim h3 {
+  font-size: 1rem;
+  color: #4a6fa5;
+  margin: 0;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+}
+
+.vrchat-btn-slim {
+  background: var(--accent-yellow, #ffe066);
+  color: #7c6218;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 3px 8px rgba(255, 224, 102, 0.3);
+  white-space: nowrap;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.vrchat-btn-slim:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
 /* フッター公式Xボタン */
 .footer-sns {
   margin: 0.8rem 0;
@@ -681,301 +701,68 @@ dialog img {
   transform: translateY(-2px);
 }
 
-/* サブタイトル（CAST）の調整 */
-.en-label {
-  display: block;
-  font-family: 'Cormorant Garamond', serif; /* 既存の設定を活かしつつ調整 */
-  font-size: 1rem;
-  letter-spacing: 0.3em; /* 少し字間を広げてお洒落に */
-  color: #5aa9e6;
+/* フッター */
+footer {
   text-align: center;
+  padding: 2rem 5%;
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 2px dashed var(--border-soft);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* 画像拡大モーダル */
+dialog {
+  margin: auto;
+  border: none;
+  border-radius: 16px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+dialog::backdrop {
+  background: rgba(74, 111, 165, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+dialog img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+}
+
+.dialog-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-light);
   margin-bottom: 0.5rem;
 }
 
-/* メインタイトル（天使メイド紹介）の調整 */
-main h2 {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  color: #4a6fa5;
-  letter-spacing: 0.15em;
-  text-align: center;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 220, 240, 0.5);
-}
-/* VRChatリンクカード */
-.vrchat-card {
-  background: var(--card-bg, rgba(255, 255, 255, 0.85));
-  border: 2px solid #fff;
-  border-radius: 24px;
-  padding: 1.8rem 2rem;
-  margin: 2.5rem auto;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 8px 25px rgba(126, 200, 227, 0.15);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 画面の両サイドに縦レース柄を配置する設定 */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background-image: url('assets/lace.png');
+  background-repeat: repeat-y;
+  background-size: contain;
+  z-index: 1000;
+  pointer-events: none;
 }
 
-.vrchat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(126, 200, 227, 0.3);
-  border-color: var(--accent-yellow, #ffe066);
+body::before {
+  left: 0;
 }
 
-/* 左側のアイコン部分 */
-.vrchat-icon {
-  font-size: 2.5rem;
-  background: var(--bg-blue, #eaf6ff);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: inset 0 2px 6px rgba(126, 200, 227, 0.3);
-}
-
-/* テキスト部分 */
-.vrchat-content {
-  flex: 1;
-}
-
-.vrchat-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  color: #5aa9e6;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.vrchat-content h3 {
-  font-size: 1.15rem;
-  color: #4a6fa5;
-  margin-bottom: 0.3rem;
-  font-family: 'Zen Maru Gothic', sans-serif;
-}
-
-.vrchat-content p {
-  font-size: 0.88rem;
-  color: var(--text-light, #718096);
-  margin: 0;
-}
-
-/* 右側のボタン部分 */
-.vrchat-btn {
-  background: var(--accent-yellow, #ffe066);
-  color: #7c6218;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.8rem 1.4rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 4px 12px rgba(255, 224, 102, 0.4);
-  white-space: nowrap;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.vrchat-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* スマホ対応（画面が狭いときは縦並びにする） */
-@media (max-width: 600px) {
-  .vrchat-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .vrchat-btn {
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-}
-/* VRChatリンクカード */
-.vrchat-card {
-  background: var(--card-bg, rgba(255, 255, 255, 0.85));
-  border: 2px solid #fff;
-  border-radius: 24px;
-  padding: 1.8rem 2rem;
-  margin: 2.5rem auto;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 8px 25px rgba(126, 200, 227, 0.15);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.vrchat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(126, 200, 227, 0.3);
-  border-color: var(--accent-yellow, #ffe066);
-}
-
-/* 左側のアイコン部分 */
-.vrchat-icon {
-  font-size: 2.2rem;
-  background: var(--bg-blue, #eaf6ff);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: inset 0 2px 6px rgba(126, 200, 227, 0.3);
-}
-
-/* テキスト部分 */
-.vrchat-content {
-  flex: 1;
-}
-
-.vrchat-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  color: #5aa9e6;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.vrchat-content h3 {
-  font-size: 1.15rem;
-  color: #4a6fa5;
-  margin-bottom: 0.3rem;
-  font-family: 'Zen Maru Gothic', sans-serif;
-}
-
-.vrchat-content p {
-  font-size: 0.88rem;
-  color: var(--text-light, #718096);
-  margin: 0;
-}
-
-/* 右側のボタン部分 */
-.vrchat-btn {
-  background: var(--accent-yellow, #ffe066);
-  color: #7c6218;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.8rem 1.4rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 4px 12px rgba(255, 224, 102, 0.4);
-  white-space: nowrap;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.vrchat-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* スマホ対応 */
-@media (max-width: 600px) {
-  .vrchat-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .vrchat-btn {
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-}
-/* VRChatリンクカード（スリム版） */
-.vrchat-card-slim {
-  background: var(--card-bg, rgba(255, 255, 255, 0.85));
-  border: 2px solid #fff;
-  border-radius: 18px;
-  padding: 1rem 1.5rem;
-  margin: 1.5rem auto;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  box-shadow: 0 4px 15px rgba(126, 200, 227, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.vrchat-card-slim:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(126, 200, 227, 0.25);
-  border-color: var(--accent-yellow, #ffe066);
-}
-
-/* 左側のアイコン */
-.vrchat-icon-slim {
-  font-size: 1.5rem;
-  background: var(--bg-blue, #eaf6ff);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: inset 0 2px 4px rgba(126, 200, 227, 0.3);
-}
-
-/* 中央のテキスト */
-.vrchat-content-slim {
-  flex: 1;
-}
-
-.vrchat-card-slim .vrchat-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #5aa9e6;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.1rem;
-}
-
-.vrchat-card-slim h3 {
-  font-size: 1rem;
-  color: #4a6fa5;
-  margin: 0;
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 700;
-}
-
-/* 右側のボタン */
-.vrchat-btn-slim {
-  background: var(--accent-yellow, #ffe066);
-  color: #7c6218;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  box-shadow: 0 3px 8px rgba(255, 224, 102, 0.3);
-  white-space: nowrap;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.vrchat-btn-slim:hover {
-  transform: scale(1.04);
-  opacity: 0.9;
+body::after {
+  right: 0;
 }
 
 /* スマホ対応 */
@@ -990,186 +777,4 @@ main h2 {
     justify-content: center;
     margin-top: 0.2rem;
   }
-}
-/* タイトルまわりのコンテナ */
-.section-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-/* タイトル下のハートのライン画像 */
-.section-line {
-  display: block;
-  max-width: 280px; /* お好みに合わせてサイズを調整してね (例: 220px〜320px) */
-  width: 100%;
-  height: auto;
-  margin: 0.8rem auto 0; /* 文字との絶妙な余白 */
-  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25)); /* ふんわりとした影をつける場合 */
-}
-/* 共通のバッジの基本設定 */
-.cast-role {
-  display: inline-block;
-  color: #fff; /* 文字色を白にするとカラー背景に映えて綺麗です！ */
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.2rem 0.8rem;
-  border-radius: 999px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-}
-
-/* 各キャストごとのカラー設定 */
-.role-nemu { background: #cd5c5c; }     /* ねむ */
-.role-kisara { background: var(--accent-yellow, #ffe066); color: #ffffff; } /* きさら（文字を白に変更！） */
-.role-sora { background: #1e90ff; }     /* そら */
-.role-anyu { background: #00ced1; }     /* あにゅ */
-.role-kurage { background: #87ceeb; }   /* くらげ */
-.role-kokonon { background: #956DAF; }  /* ここのん */
-.role-pibi { background: #add8e6; }     /* ぴび */
-.role-ruru { background: #ff69b4; }     /* 宇宙るる */
-
-/* 「天使メイド紹介」の下の余白をギュッと詰める */
-.section-header h2,
-main h2 {
-  margin-bottom: 0.3rem;
-}
-
-/* タイトル下のハートのライン画像をさらに上へ近づける */
-.section-line {
-  display: block;
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  margin: -10px auto 0; /* マイナスの数値で上の文字にグッと近づけています */
-  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
-}
-/* キャストカードの文字枠を heart_frame.png に差し替え */
-.cast-info {
-  width: 100%;
-  flex: 1;
-  position: relative;
-  z-index: 2;
-  background-color: transparent !important; /* 元の白い背景を透明にする */
-  background-image: url('assets/heart_frame.png'); /* フレーム画像を指定 */
-  background-size: 100% 100%; /* カードの大きさに合わせてぴったり伸ばす */
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none !important; /* 元の枠線を消す */
-  box-shadow: none !important; /* 元の四角い影を消す */
-  filter: drop-shadow(0 8px 18px rgba(126, 200, 227, 0.22)); /* 画像の形に沿ったふんわり影 */
-  padding: 2.2rem 1.4rem 2.2rem; /* ハートに文字がかぶらないよう上下の余白を広めに調整 */
-}
-
-/* ホバーしたときの影も画像に沿わせる */
-a.cast-card:hover .cast-info {
-  box-shadow: none !important;
-  filter: drop-shadow(0 12px 24px rgba(126, 200, 227, 0.35));
-}
-/* タイトルエリア全体の下余白を小さくする */
-.section-header {
-  text-align: center;
-  margin-bottom: 0.8rem; /* 2.5rem から小さく変更 */
-}
-
-/* ライン画像の下側の透明余白もマイナスで詰める */
-.section-line {
-  display: block;
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  margin: -10px auto -12px; /* 最後の「-12px」で下の文章との距離を詰めています */
-  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
-}
-/* 01〜04の数字画像を綺麗で可愛いサイズに調整する */
-.num-img {
-  width: 32px !important;  /* 横幅をすっきり小さく固定 */
-  height: auto !important; /* 縦横比を崩さない */
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;          /* 画像が縮んで変形するのを防ぐ */
-}
-
-/* ディスカバーカードのレイアウトを整える */
-.discover-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-/* 1. ディスカバーの白枠（カード）のデザインをしっかり復活させる */
-.discover-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.5rem !important;
-  background-color: #ffffff !important; /* 真っ白な背景 */
-  border-radius: 16px !important;       /* 角を丸くする */
-  padding: 1.5rem 2rem !important;      /* 内側の余白 */
-  box-shadow: 0 8px 24px rgba(126, 200, 227, 0.15) !important; /* ふんわりした可愛い影 */
-  text-decoration: none !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* カードにマウスを乗せたときの浮き上がりエフェクト */
-.discover-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(126, 200, 227, 0.25) !important;
-}
-
-/* 2. 数字の画像サイズを丁度よく大きく調整する */
-.num-img {
-  width: 64px !important;  /* ここで数字の大きさを調整できます（大きくしたい場合は数値を増やしてね） */
-  height: auto !important;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-/* 1. カード同士の間に可愛いすき間（余白）を空ける */
-.discover-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem !important; /* ここでカード同士の間隔を調整できます（もっと広げたいときは 2rem にしてね） */
-}
-
-/* 2. ディスカバーカード全体の形と余白を整える */
-.discover-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.5rem !important;
-  background-color: #ffffff !important;
-  border-radius: 16px !important;
-  padding: 1.5rem 2rem !important;
-  box-shadow: 0 8px 24px rgba(126, 200, 227, 0.15) !important;
-  text-decoration: none !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* 3. 数字の画像の大きさを綺麗にキープする */
-.num-img {
-  width: 56px !important;  /* 01の画像サイズ */
-  height: auto !important;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-/* 画面の両サイドに縦レース柄を配置する設定 */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 40px; /* レースの幅（画像のサイズに合わせて調整してね） */
-  background-image: url('assets/lace.png'); /* レース画像のパス */
-  background-repeat: repeat-y; /* 縦方向へタイル状に繰り返す */
-  background-size: contain;
-  z-index: 1000; /* コンテンツより手前に表示する場合 */
-  pointer-events: none; /* レース部分をクリックしても中のボタンが押せるようにする優れもの！ */
-}
-
-/* 左側のレース */
-body::before {
-  left: 0;
-}
-
-/* 右側のレース */
-body::after {
-  right: 0;
 }
