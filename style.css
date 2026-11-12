@@ -150,12 +150,12 @@ h1, h2 {
 
 .hero-visual {
   width: 100%;
-  max-width: 850px; /* ← ここで両サイドに少し余る絶妙な大きさに調整！ */
+  max-width: 950px; /* ← ここを '850px' から '950px'（またはお好みで '980px' など）に大きくします！ */
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 0.5rem;   /* 左右のパディングを少し狭くして、より画面一杯に広げます */
 }
 
 .hero-visual img {
@@ -163,9 +163,9 @@ h1, h2 {
   height: auto !important;
   display: block;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(126, 200, 227, 0.2);
+  border: none !important; /* 枠線なし */
+  box-shadow: 0 10px 30px rgba(126, 200, 227, 0.2); /* ふんわりした影はそのまま */
 }
-
 .hero h1 {
   font-size: 2.5rem;
   letter-spacing: 0.08em;
