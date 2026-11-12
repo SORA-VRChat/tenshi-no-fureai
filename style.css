@@ -965,3 +965,71 @@ body::after {
   transform: scale(1.04);
   opacity: 0.9;
 }
+/* ==========================================
+   VRChatグループカード（スリム版）完全修正版
+   ========================================== */
+a.vrchat-card-slim {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 18px !important;
+  padding: 1rem 1.5rem !important;
+  margin: 1.5rem auto !important;
+  max-width: 600px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.2rem !important;
+  box-shadow: 0 4px 15px rgba(126, 200, 227, 0.12) !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  box-sizing: border-box !important;
+}
+
+a.vrchat-card-slim:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 22px rgba(126, 200, 227, 0.25) !important;
+  border-color: #ffe066 !important;
+}
+
+.vrchat-icon-slim {
+  font-size: 1.5rem !important;
+  background: #eaf6ff !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: inset 0 2px 4px rgba(126, 200, 227, 0.3) !important;
+}
+
+.vrchat-content-slim {
+  flex: 1 !important;
+}
+
+a.vrchat-card-slim .vrchat-label {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.15em !important;
+  color: #5aa9e6 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 0.1rem !important;
+}
+
+/* カード内の見出しのスタイルが外側の影響を受けないように強制上書き */
+a.vrchat-card-slim h3 {
+  font-size: 1rem !important;
+  color: #4a6fa5 !important;
+  margin: 0 !important;
+  font-family: 'Zen Maru Gothic', sans-serif !important;
+  font-weight: 700 !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  text-shadow: none !important;
+}
+
+a.vrchat-card-slim .arrow {
+  color: #5aa9e6 !important;
+  font-size: 1.1rem !important;
+}
