@@ -1006,3 +1006,21 @@ main h2 {
   margin: 0.8rem auto 0; /* 文字との絶妙な余白 */
   filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25)); /* ふんわりとした影をつける場合 */
 }
+/* 共通のバッジの基本設定 */
+.cast-role {
+  display: inline-block;
+  color: #fff; /* 文字色を白にするとカラー背景に映えて綺麗です！ */
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 各キャストごとのカラー設定 */
+.role-nemu { background: #cd5c5c; }     /* ねむ */
+.role-kisara { background: var(--accent-yellow, #ffe066); color: #7c6218; } /* きさら（そのまま） */
+.role-sora { background: #1e90ff; }     /* そら */
+.role-anyu { background: #00ced1; }     /* あにゅ */
+.role-kurage { background: #87ceeb; }   /* くらげ */
+.role-kokonon { background: #956DAF; }  /* ここのん */
