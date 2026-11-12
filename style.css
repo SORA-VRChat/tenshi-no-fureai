@@ -153,7 +153,7 @@ h1, h2 {
 
 .hero-visual {
   width: 100%;
-  max-width: 1350px; /* ← 思いきり大きくして、両脇のレースに被るようにする！ */
+  max-width: 1440px; /* ← 思いきり大きくして、両脇のレースに被るようにする！ */
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
