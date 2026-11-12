@@ -1064,3 +1064,18 @@ a.cast-card:hover .cast-info {
   box-shadow: none !important;
   filter: drop-shadow(0 12px 24px rgba(126, 200, 227, 0.35));
 }
+/* タイトルエリア全体の下余白を小さくする */
+.section-header {
+  text-align: center;
+  margin-bottom: 0.8rem; /* 2.5rem から小さく変更 */
+}
+
+/* ライン画像の下側の透明余白もマイナスで詰める */
+.section-line {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: -10px auto -12px; /* 最後の「-12px」で下の文章との距離を詰めています */
+  filter: drop-shadow(0 2px 4px rgba(126, 200, 227, 0.25));
+}
