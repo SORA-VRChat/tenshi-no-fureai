@@ -1094,3 +1094,30 @@ a.cast-card:hover .cast-info {
   align-items: center;
   gap: 1.5rem;
 }
+/* 1. ディスカバーの白枠（カード）のデザインをしっかり復活させる */
+.discover-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  background-color: #ffffff !important; /* 真っ白な背景 */
+  border-radius: 16px !important;       /* 角を丸くする */
+  padding: 1.5rem 2rem !important;      /* 内側の余白 */
+  box-shadow: 0 8px 24px rgba(126, 200, 227, 0.15) !important; /* ふんわりした可愛い影 */
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* カードにマウスを乗せたときの浮き上がりエフェクト */
+.discover-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(126, 200, 227, 0.25) !important;
+}
+
+/* 2. 数字の画像サイズを丁度よく大きく調整する */
+.num-img {
+  width: 52px !important;  /* ここで数字の大きさを調整できます（大きくしたい場合は数値を増やしてね） */
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
