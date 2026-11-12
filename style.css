@@ -1149,3 +1149,27 @@ a.cast-card:hover .cast-info {
   display: block;
   flex-shrink: 0;
 }
+/* 画面の両サイドに縦レース柄を配置する設定 */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 40px; /* レースの幅（画像のサイズに合わせて調整してね） */
+  background-image: url('assets/lace.png'); /* レース画像のパス */
+  background-repeat: repeat-y; /* 縦方向へタイル状に繰り返す */
+  background-size: contain;
+  z-index: 1000; /* コンテンツより手前に表示する場合 */
+  pointer-events: none; /* レース部分をクリックしても中のボタンが押せるようにする優れもの！ */
+}
+
+/* 左側のレース */
+body::before {
+  left: 0;
+}
+
+/* 右側のレース */
+body::after {
+  right: 0;
+}
