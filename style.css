@@ -328,6 +328,17 @@ h1, h2 {
   font-weight: 700;
   color: #4a6fa5;
   margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.cast-name::before,
+.cast-name::after {
+  content: '✦';
+  color: var(--accent-yellow);
+  font-size: 0.9rem;
 }
 
 .cast-desc {
