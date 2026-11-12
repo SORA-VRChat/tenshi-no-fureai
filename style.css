@@ -39,7 +39,7 @@ a {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 500;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 2px dashed var(--border-soft);
@@ -125,15 +125,16 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
-/* ヒーローセクション（Top）＆ 大きくなったヒーロー画像 */
+/* ヒーローセクション（レースの上に重ねる・さらに大きく！） */
 .hero {
   text-align: center;
-  padding: 3rem 1rem 4rem;
+  padding: 3rem 0 4rem;
   position: relative;
   width: 100%;
-  max-width: 1000px; /* メイン幅いっぱいに広げる */
+  max-width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
+  z-index: 2000; /* レース(z-index: 100)よりも手前にする！ */
 }
 
 .hero-badge {
@@ -150,22 +151,27 @@ h1, h2 {
 
 .hero-visual {
   width: 100%;
-  max-width: 950px; /* ← ここを '850px' から '950px'（またはお好みで '980px' など）に大きくします！ */
+  max-width: 1000px; /* ← もっと大きく迫力が出るように拡大！ */
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;   /* 左右のパディングを少し狭くして、より画面一杯に広げます */
+  background: var(--card-bg);
+  border: 2px solid #fff;
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(126, 200, 227, 0.15);
 }
 
 .hero-visual img {
   width: 100% !important;
   height: auto !important;
   display: block;
-  border-radius: 20px;
-  border: none !important; /* 枠線なし */
-  box-shadow: 0 10px 30px rgba(126, 200, 227, 0.2); /* ふんわりした影はそのまま */
+  border-radius: 16px;
+  border: none !important;  /* 枠線なし */
+  box-shadow: none !important; /* ふんわり影もなしですっきり！ */
 }
+
 .hero h1 {
   font-size: 2.5rem;
   letter-spacing: 0.08em;
@@ -232,7 +238,7 @@ h1, h2 {
   box-shadow: 0 8px 18px rgba(126, 200, 227, 0.35);
 }
 
-/* DISCOVER（01〜04ナビゲーション：スリムな白枠＆大きめ数字画像） */
+/* DISCOVER（01〜04ナビゲーション） */
 .discover-grid {
   display: flex;
   flex-direction: column;
@@ -246,7 +252,7 @@ h1, h2 {
   background-color: #ffffff !important;
   border-radius: 16px !important;
   border: 2px solid #fff !important;
-  padding: 1.1rem 1.8rem !important; /* スリムですっきりした白枠の厚み */
+  padding: 1.1rem 1.8rem !important;
   box-shadow: 0 6px 20px rgba(126, 200, 227, 0.12) !important;
   text-decoration: none !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -259,7 +265,7 @@ h1, h2 {
 }
 
 .num-img {
-  width: 54px !important; /* 01〜04の数字画像の可愛い大きさ */
+  width: 54px !important;
   height: auto !important;
   object-fit: contain;
   display: block;
@@ -318,7 +324,6 @@ h1, h2 {
   filter: drop-shadow(0 6px 12px rgba(126, 200, 227, 0.25));
 }
 
-/* キャストカードの文字枠を heart_frame.png に適用 */
 .cast-info {
   width: 100%;
   flex: 1;
@@ -742,27 +747,29 @@ dialog img {
   margin-bottom: 0.5rem;
 }
 
-/* 画面の両サイドに縦レース柄を配置する設定 */
+/* ==========================================
+   両サイドの可愛い縦レース（ヘッダー下から開始＆太め）
+   ========================================== */
 body::before,
 body::after {
   content: "";
-  position: fixed;
-  top: 0;
+  position: absolute; /* absoluteにすることでヘッダーの下からスタート！ */
+  top: 80px;        /* ヘッダーの高さ分下げる */
   bottom: 0;
-  width: 40px;
+  width: 90px;      /* レースの幅を太くして存在感をアップ[cite: 4] */
   background-image: url('assets/lace.png');
   background-repeat: repeat-y;
   background-size: contain;
-  z-index: 1000;
+  z-index: 100;     /* レースのレイヤー（heroより奥に配置） */
   pointer-events: none;
 }
 
 body::before {
-  left: 0;
+  left: 15px;       /* 左側の端から少し内側 */
 }
 
 body::after {
-  right: 0;
+  right: 15px;      /* 右側の端から少し内側 */
 }
 
 /* スマホ対応 */
