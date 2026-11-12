@@ -536,9 +536,15 @@ main h2 {
   background: #f8fcff;
   border: 2px dashed var(--border-soft);
   border-radius: 16px;
-  padding: 0.85rem 1.4rem;
-  margin
-
+  padding: 1rem 1.8rem;
+  margin: 1rem auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+}
   /* ==========================================
    フッター（3行を真ん中に＆公式Xの角丸ボタン枠）
    ========================================== */
