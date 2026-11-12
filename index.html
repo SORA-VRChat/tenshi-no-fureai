@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>てんしのふれあい | VRChat メイドカフェイベント</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <header>
+    <a href="index.html" class="logo">てんしのふれあい <i>Angel Maid Cafe</i></a>
+    <nav>
+      <a href="index.html#about" class="active">About</a>
+      <a href="schedule.html">Event Schedule</a>
+      <a href="character.html">Character</a>
+      <a href="information.html">Information</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ヒーローエリア -->
+    <section class="hero">
+      <span class="hero-badge">✦ VRChat Maid Cafe Event ✦</span>
+      <div class="hero-visual">
+        <img src="assets/hero.png" alt="てんしのふれあい メインビジュアル">
+      </div>
+      <h1>てんしのふれあい</h1>
+      <p class="hero-sub">雲の上の小さなカフェで、天使のメイドと癒やしのひとときを。</p>
+      <p class="hero-meta">EST. 2026 · VRChat</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="card">
+      <span class="en-label">ABOUT</span>
+      <h2>癒やしのメイドカフェ<br>「てんしのふれあい」へようこそ</h2>
+      <p>「てんしのふれあい」は、VRChat内で不定期に開店するゆめかわいいメイドカフェイベントです。</p>
+      <p>淡い光とふわふわの雲に包まれた店内で、個性豊かな天使のメイドたちがご主人様・お嬢様を心を込めてお迎えいたします。</p>
+
+      <h3>■ コンセプト</h3>
+      <p>日常の疲れをそっと癒やす、優しくてあたたかい空間を目指しています。おしゃべりを楽しんだり、美味しいおまじないメニューを味わったり、初めての方も安心してお過ごしいただけます。</p>
+
+      <h3>■ 店内の様子・ギャラリー</h3>
+      <p>※画像をクリックすると拡大表示されます</p>
+      <div class="gallery">
+        <img src="assets/photo-01.jpg" alt="カフェの様子 1">
+        <img src="assets/photo-02.jpg" alt="カフェの様子 2">
+        <img src="assets/photo-03.jpg" alt="カフェの様子 3">
+        <img src="assets/photo-04.jpg" alt="カフェの様子 4">
+      </div>
+    </section>
+
+    <!-- DISCOVER（各ページへの導線） -->
+    <section>
+      <span class="en-label">DISCOVER</span>
+      <div class="discover-list">
+        <a href="#about" class="discover-item">
+          <div class="discover-left">
+            <span class="discover-num">01</span>
+            <div>
+              <span class="discover-title">About</span>
+              <span class="discover-sub">私たちについて・コンセプト</span>
+            </div>
+          </div>
+          <span>↗</span>
+        </a>
+        <a href="schedule.html" class="discover-item">
+          <div class="discover-left">
+            <span class="discover-num">02</span>
+            <div>
+              <span class="discover-title">Event Schedule</span>
+              <span class="discover-sub">開店日時・イベント予定</span>
+            </div>
+          </div>
+          <span>↗</span>
+        </a>
+        <a href="character.html" class="discover-item">
+          <div class="discover-left">
+            <span class="discover-num">03</span>
+            <div>
+              <span class="discover-title">Character</span>
+              <span class="discover-sub">天使メイド・キャスト紹介</span>
+            </div>
+          </div>
+          <span>↗</span>
+        </a>
+        <a href="information.html" class="discover-item">
+          <div class="discover-left">
+            <span class="discover-num">04</span>
+            <div>
+              <span class="discover-title">Information</span>
+              <span class="discover-sub">参加方法・注意事項</span>
+            </div>
+          </div>
+          <span>↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>てんしのふれあい <i>Angel Maid Cafe</i></p>
+    <p>© 2026 TENSHI NO FUREAI</p>
+  </footer>
+
+  <!-- 拡大表示ダイアログ -->
+  <dialog id="imageDialog">
+    <p class="dialog-hint">外側をクリックで閉じます</p>
+    <img id="dialogImg" src="" alt="拡大画像">
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
