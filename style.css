@@ -1019,7 +1019,7 @@ main h2 {
 
 /* 各キャストごとのカラー設定 */
 .role-nemu { background: #cd5c5c; }     /* ねむ */
-.role-kisara { background: var(--accent-yellow, #ffe066); color: #7c6218; } /* きさら（そのまま） */
+.role-kisara { background: var(--accent-yellow, #ffe066); color: #ffffff; } /* きさら（文字を白に変更！） */
 .role-sora { background: #1e90ff; }     /* そら */
 .role-anyu { background: #00ced1; }     /* あにゅ */
 .role-kurage { background: #87ceeb; }   /* くらげ */
