@@ -755,66 +755,53 @@ footer a:hover,
   transform: translateY(-2px) !important;
 }
 /* ==========================================
-   キャストフォトギャラリー（4枚用・可愛いフォトフレーム枠）
+   キャストフォトギャラリー（大きく縦並び版）
    ========================================== */
 .cast-photo-gallery {
   width: 100%;
-  max-width: 600px;
-  margin: 1.5rem auto 1.5rem;
-  padding: 0 0.5rem;
+  max-width: 500px; /* 写真の最大幅（お好みで調整してね） */
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .photo-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.9rem;
+  flex-direction: column; /* 縦に並べる設定 */
+  gap: 1.5rem; /* 写真と写真の間のすき間 */
 }
 
 .photo-item {
-  width: calc(25% - 0.9rem); /* 1行に4枚ぴったり並ぶサイズ */
-  max-width: 130px;          /* 10枚の時より少し大きく見やすく！ */
-  min-width: 100px;
+  width: 100%; /* 横幅いっぱいに広げる */
   background-color: #ffffff;
-  padding: 4px;              /* 可愛い白枠 */
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(126, 200, 227, 0.22);
+  padding: 6px; /* 可愛い白枠の厚み */
+  border-radius: 18px; /* 角の丸みを少し大きく */
+  box-shadow: 0 6px 16px rgba(126, 200, 227, 0.25);
   border: 2px solid #fff;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* 右上のキラキラ装飾 */
+/* 右上のキラキラ装飾を少し大きく */
 .photo-item::after {
   content: '✦';
   position: absolute;
-  top: 4px;
-  right: 5px;
+  top: 8px;
+  right: 10px;
   color: var(--accent-yellow);
-  font-size: 0.7rem;
+  font-size: 1rem;
   opacity: 0.9;
 }
 
 .photo-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto; /* 高さは画像の比率に合わせる（縦長でも横長でも綺麗に映るよ！） */
+  border-radius: 12px;
   display: block;
 }
 
-/* ホバー時の可愛い動き */
+/* ホバー時の可愛い動き（少し上にふわっと浮くよ） */
 .photo-item:hover {
-  transform: translateY(-4px) rotate(2deg);
-  box-shadow: 0 8px 18px rgba(126, 200, 227, 0.35);
-}
-
-/* スマホ用（2枚×2段で綺麗に並ぶ） */
-@media screen and (max-width: 520px) {
-  .photo-item {
-    width: calc(50% - 0.9rem);
-    max-width: 150px;
-  }
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(126, 200, 227, 0.35);
 }
