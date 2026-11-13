@@ -759,7 +759,7 @@ footer a:hover,
    ========================================== */
 .cast-photo-gallery {
   width: 100%;
-  max-width: 500px; /* 写真の最大幅（お好みで調整してね） */
+  max-width: 500px; /* 写真の最大幅 */
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -774,7 +774,7 @@ footer a:hover,
   width: 100%; /* 横幅いっぱいに広げる */
   background-color: #ffffff;
   padding: 6px; /* 可愛い白枠の厚み */
-  border-radius: 18px; /* 角の丸みを少し大きく */
+  border-radius: 18px; /* 角の丸み */
   box-shadow: 0 6px 16px rgba(126, 200, 227, 0.25);
   border: 2px solid #fff;
   position: relative;
@@ -782,20 +782,9 @@ footer a:hover,
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* 右上のキラキラ装飾を少し大きく */
-.photo-item::after {
-  content: '✦';
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  color: var(--accent-yellow);
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
 .photo-item img {
   width: 100%;
-  height: auto; /* 高さは画像の比率に合わせる（縦長でも横長でも綺麗に映るよ！） */
+  height: auto; /* 高さは画像の比率に合わせる */
   border-radius: 12px;
   display: block;
 }
