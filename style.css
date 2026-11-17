@@ -914,10 +914,26 @@ footer a:hover,
 }
 
 .cast-info-col h2 {
+  display: table;
+  margin: 0.2rem auto 1rem;
+  padding: 0.45rem 2.2rem;
+  font-size: 1.55rem;
+  color: #4a6fa5;
+  background: linear-gradient(135deg, #eaf6ff 0%, #ffffff 50%, #fffce6 100%);
+  border: 2px dashed #7ec8e3;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px #ffffff, 0 5px 15px rgba(126, 200, 227, 0.28);
   text-align: center;
-  margin: 0.4rem 0 0.3rem;
 }
 
+.cast-info-col h2::before,
+.cast-info-col h2::after {
+  content: '✦';
+  color: #f4b942;
+  font-size: 1rem;
+  margin: 0 0.6rem;
+  vertical-align: middle;
+}
 .cast-info-col .cast-detail-lead {
   text-align: left;
   margin-bottom: 1.2rem;
