@@ -22,39 +22,52 @@
 
   <main>
     <section class="cast-detail">
+      <!-- 一番上の丸いアイコン（位置はそのまま） -->
       <div class="cast-detail-img">
         <img src="assets/detail-03.png" alt="そら">
       </div>
+
+      <!-- 白いカード内を左右2カラムにする -->
       <div class="card cast-detail-card">
-        <span class="cast-role role-sora">にゃんにゃんえんじぇる♡</span>
-        <h2>そら</h2>
-        <p class="cast-detail-lead">ご主人様、お嬢様！沢山癒されてくださいねっ♪</p>
+        <div class="cast-detail-layout">
+          
+          <!-- 左側：3枚切り替えスライドショー -->
+          <div class="cast-photo-col">
+            <div class="photo-main-wrap">
+              <button type="button" class="slider-btn prev" onclick="changeSlide(-1)" aria-label="前の写真">‹</button>
+              <div class="photo-frame">
+                <img id="mainCastImg" src="assets/sora-01.png" alt="そら 写真1">
+              </div>
+              <button type="button" class="slider-btn next" onclick="changeSlide(1)" aria-label="次の写真">›</button>
+            </div>
 
-        <div class="cast-profile-list">
-          <div class="profile-row"><span>誕生日</span><span>3月30日</span></div>
-          <div class="profile-row"><span>好きなもの</span><span>ダンス、読書</span></div>
-          <div class="profile-row"><span>X (Twitter)</span><span><a href="https://x.com/sora_game_sora_" target="_blank" rel="noopener">@sora_game_sora_</a></span></div>
-        </div>
-
-        <!-- 4枚のフォトギャラリー（拡張子を .png に統一！） -->
-        <div class="cast-photo-gallery">
-          <div class="photo-list">
-            <div class="photo-item">
-              <img src="assets/sora-01.png" alt="そら フォト 1">
-            </div>
-            <div class="photo-item">
-              <img src="assets/sora-02.png" alt="そら フォト 2">
-            </div>
-            <div class="photo-item">
-              <img src="assets/sora-03.png" alt="そら フォト 3">
-            </div>
-            <div class="photo-item">
-              <img src="assets/sora-04.png" alt="そら フォト 4">
+            <div class="photo-thumbs">
+              <img src="assets/sora-01.png" alt="写真1" class="thumb active" onclick="setSlide(0)">
+              <img src="assets/sora-02.png" alt="写真2" class="thumb" onclick="setSlide(1)">
+              <img src="assets/sora-03.png" alt="写真3" class="thumb" onclick="setSlide(2)">
             </div>
           </div>
+
+          <!-- 右側：名前・プロフィール・メッセージ -->
+          <div class="cast-info-col">
+            <span class="cast-role">にゃんにゃん天使</span>
+            <h2>そら</h2>
+            <p class="cast-detail-lead">お給仕ならお任せあれ！一緒に♡愛こめ♡しようねっ！</p>
+
+            <div class="cast-profile-list">
+              <div class="profile-row"><span>誕生日</span><span>○月○日</span></div>
+              <div class="profile-row"><span>好きなもの</span><span>〇〇・〇〇</span></div>
+              <div class="profile-row"><span>紹介文</span><span>ここに紹介文が入ります♪</span></div>
+              <div class="profile-row"><span>X (Twitter)</span><span><a href="https://x.com/" target="_blank" rel="noopener">Sora_X</a></span></div>
+            </div>
+
+            <p class="cast-message">
+              ご主人様・お嬢様、ようこそ「てんしのふれあい」へ！<br>
+              一緒に楽しいひとときを過ごしましょう♪
+            </p>
+          </div>
+
         </div>
-
-
 
         <div class="back-btn-wrap">
           <a href="character.html" class="back-btn">← キャスト一覧へ戻る</a>
@@ -65,6 +78,34 @@
 
   <footer>
     <p>てんしのふれあい <i>Flare Maid Cafe</i></p>
+    <div class="footer-sns">
+      <a href="https://x.com/flare_cafe_" target="_blank" rel="noopener" class="sns-btn">
+        𝕏 公式X（@flare_cafe_）
+      </a>
+    </div>
+    <p>© 2026 TENSHI NO FUREAI</p>
   </footer>
+
+  <script>
+    const castImages = [
+      "assets/sora-01.png",
+      "assets/sora-02.png",
+      "assets/sora-03.png"
+    ];
+    let currentSlide = 0;
+
+    function setSlide(index) {
+      currentSlide = index;
+      document.getElementById("mainCastImg").src = castImages[currentSlide];
+      document.querySelectorAll(".photo-thumbs .thumb").forEach((el, i) => {
+        el.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    function changeSlide(step) {
+      currentSlide = (currentSlide + step + castImages.length) % castImages.length;
+      setSlide(currentSlide);
+    }
+  </script>
 </body>
 </html>
