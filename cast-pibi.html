@@ -25,20 +25,45 @@
       <div class="cast-detail-img">
         <img src="assets/detail-07.png" alt="ぴび">
       </div>
+
       <div class="card cast-detail-card">
-        <h2>ぴび</h2>
-        <p class="cast-detail-lead">一緒に楽しい時間を過ごそうね~♪</p>
+        <div class="cast-detail-layout">
+          
+          <!-- 左側：3枚切り替えスライドショー -->
+          <div class="cast-photo-col">
+            <div class="photo-main-wrap">
+              <button type="button" class="slider-btn prev" onclick="changeSlide(-1)" aria-label="前の写真">‹</button>
+              <div class="photo-frame">
+                <img id="mainCastImg" src="assets/pibi-01.png" alt="ぴび 写真1">
+              </div>
+              <button type="button" class="slider-btn next" onclick="changeSlide(1)" aria-label="次の写真">›</button>
+            </div>
 
-        <div class="cast-profile-list">
-          <div class="profile-row"><span>誕生日</span><span>○月○日</span></div>
-          <div class="profile-row"><span>好きなもの</span><span>お歌とものづくり♪</span></div>
-          <div class="profile-row"><span>X (Twitter)</span><span><a href="https://x.com/pYoYyb" target="_blank" rel="noopener">@pYoYyb</a></span></div>
+            <div class="photo-thumbs">
+              <img src="assets/pibi-01.png" alt="写真1" class="thumb active" onclick="setSlide(0)">
+              <img src="assets/pibi-02.png" alt="写真2" class="thumb" onclick="setSlide(1)">
+              <img src="assets/pibi-03.png" alt="写真3" class="thumb" onclick="setSlide(2)">
+            </div>
+          </div>
+
+          <!-- 右側：名前・プロフィール・メッセージ -->
+          <div class="cast-info-col">
+            <h2>ぴび</h2>
+            <p class="cast-detail-lead">一緒に楽しい時間を過ごそうね〜♪</p>
+
+            <div class="cast-profile-list">
+              <div class="profile-row"><span>誕生日</span><span>○月○日</span></div>
+              <div class="profile-row"><span>好きなもの</span><span>お歌とものづくり♪</span></div>
+              <div class="profile-row"><span>X (Twitter)</span><span><a href="https://x.com/pYoYyb" target="_blank" rel="noopener">@pYoYyb</a></span></div>
+            </div>
+
+            <p class="cast-message">
+              ご主人様・お嬢様、ようこそ「てんしのふれあい」へ！<br>
+              一緒に楽しいひとときを過ごしましょう♪
+            </p>
+          </div>
+
         </div>
-
-        <p class="cast-message">
-          ご主人様・お嬢様、ようこそ「てんしのふれあい」へ！<br>
-          一緒に楽しいひとときを過ごしましょう♪
-        </p>
 
         <div class="back-btn-wrap">
           <a href="character.html" class="back-btn">← キャスト一覧へ戻る</a>
@@ -49,7 +74,34 @@
 
   <footer>
     <p>てんしのふれあい <i>Flare Maid Cafe</i></p>
+    <div class="footer-sns">
+      <a href="https://x.com/flare_cafe_" target="_blank" rel="noopener" class="sns-btn">
+        𝕏 公式X（@flare_cafe_）
+      </a>
+    </div>
     <p>© 2026 TENSHI NO FUREAI</p>
   </footer>
+
+  <script>
+    const castImages = [
+      "assets/pibi-01.png",
+      "assets/pibi-02.png",
+      "assets/pibi-03.png"
+    ];
+    let currentSlide = 0;
+
+    function setSlide(index) {
+      currentSlide = index;
+      document.getElementById("mainCastImg").src = castImages[currentSlide];
+      document.querySelectorAll(".photo-thumbs .thumb").forEach((el, i) => {
+        el.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    function changeSlide(step) {
+      currentSlide = (currentSlide + step + castImages.length) % castImages.length;
+      setSlide(currentSlide);
+    }
+  </script>
 </body>
 </html>
