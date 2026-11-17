@@ -965,3 +965,16 @@ footer a:hover,
     text-align: center;
   }
 }
+/* TOPページメイン画像：ふわっとフェードイン */
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero-visual img {
+  animation: heroFadeIn 1.8s ease-out forwards;
+}
