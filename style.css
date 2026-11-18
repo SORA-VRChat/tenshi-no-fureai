@@ -978,3 +978,15 @@ footer a:hover,
 .hero-visual img {
   animation: heroFadeIn 6.5s ease-out forwards;
 }
+/* VRChatグループアイコンの画像化対応 */
+.vrchat-icon-slim {
+  overflow: hidden;
+  padding: 0;
+}
+
+.vrchat-icon-slim img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
