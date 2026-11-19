@@ -993,3 +993,24 @@ footer a:hover,
   object-fit: contain;
   display: block;
 }
+/* キャスト詳細ページ：X(Twitter)のリンクをURLらしい見た目に（水色・下線・↗アイコン） */
+.cast-profile-list a {
+  color: #5aa9e6;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cast-profile-list a::after {
+  content: '↗';
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.cast-profile-list a:hover {
+  opacity: 0.75;
+}
