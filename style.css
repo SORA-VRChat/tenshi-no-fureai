@@ -1053,11 +1053,11 @@ footer a:hover,
 }
 
 /* スタッフバッジの色 */
-.role-staff-1 { background: #5aa9e6; }
-.role-staff-2 { background: #f4a261; }
-.role-staff-3 { background: #9b89b3; }
-.role-staff-4 { background: #52b788; }
-.role-staff-5 { background: #f28482; }
+.role-staff-1 { background: #dc143c; }
+.role-staff-2 { background: #ffb6c1; }
+.role-staff-3 { background: #87ceeb; }
+.role-staff-4 { background: #808080; }
+.role-staff-5 { background: #b22222; }
 
 /* タブレット〜中画面では2列 */
 @media (max-width: 900px) {
