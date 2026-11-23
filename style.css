@@ -1015,11 +1015,11 @@ footer a:hover,
   opacity: 0.75;
 }
 /* ==========================================
-   スタッフグリッド（2列並び・イラストなし・5人分）
+   スタッフグリッド（PC3列・スマホ1列・イラストなし・5人分）
    ========================================== */
 .staff-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1.5rem;
   margin-top: 1.5rem;
   align-items: stretch;
@@ -1059,9 +1059,17 @@ footer a:hover,
 .role-staff-4 { background: #52b788; }
 .role-staff-5 { background: #f28482; }
 
-/* スマホなど狭い画面では1列にする */
+/* タブレット〜中画面では2列 */
+@media (max-width: 900px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホなど狭い画面では1列 */
 @media (max-width: 600px) {
   .staff-grid {
     grid-template-columns: 1fr;
   }
+}
 }
