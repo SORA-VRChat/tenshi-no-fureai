@@ -1014,3 +1014,54 @@ footer a:hover,
 .cast-profile-list a:hover {
   opacity: 0.75;
 }
+/* ==========================================
+   スタッフグリッド（2列並び・イラストなし・5人分）
+   ========================================== */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  margin-top: 1.5rem;
+  align-items: stretch;
+}
+
+.staff-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
+  min-width: 0;
+}
+
+.staff-card .cast-info {
+  width: 100%;
+  flex: 1;
+  min-height: 210px;
+  padding: 2.3rem 1.4rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+}
+
+.staff-card:hover .cast-info {
+  box-shadow: none !important;
+  filter: drop-shadow(0 12px 24px rgba(126, 200, 227, 0.35));
+}
+
+/* スタッフバッジの色 */
+.role-staff-1 { background: #5aa9e6; }
+.role-staff-2 { background: #f4a261; }
+.role-staff-3 { background: #9b89b3; }
+.role-staff-4 { background: #52b788; }
+.role-staff-5 { background: #f28482; }
+
+/* スマホなど狭い画面では1列にする */
+@media (max-width: 600px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+}
