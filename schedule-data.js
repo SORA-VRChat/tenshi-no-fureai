@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="mini-date">${item.date}</span>
       </div>
       <div class="mini-detail">
-        <span class="mini-cast">出勤：${item.cast}</span>
+        <span class="mini-cast">お給仕予定メイド：${item.cast}</span>
         <span class="mini-note">${item.note}</span>
       </div>
     </div>
