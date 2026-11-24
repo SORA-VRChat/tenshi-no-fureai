@@ -1214,7 +1214,7 @@ footer a:hover,
 .guide-img {
   display: block;
   width: 100%;
-  max-width: 480px; /* 大きくなりすぎないよう調整（お好みで変更OK） */
+  max-width: 320px; /* 大きくなりすぎないよう調整（お好みで変更OK） */
   height: auto;
   margin: 0.5rem 0 1.4rem;
   border-radius: 14px;
