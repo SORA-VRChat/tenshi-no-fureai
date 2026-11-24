@@ -1206,3 +1206,24 @@ footer a:hover,
 .hashtag-link:hover {
   opacity: 0.75;
 }
+/* 案内手順の画像スタイル */
+.guide-steps p {
+  margin-bottom: 0.6rem;
+}
+
+.guide-img {
+  display: block;
+  width: 100%;
+  max-width: 480px; /* 大きくなりすぎないよう調整（お好みで変更OK） */
+  height: auto;
+  margin: 0.5rem 0 1.4rem;
+  border-radius: 14px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 6px 16px rgba(126, 200, 227, 0.2);
+}
+
+/* 「1回」を赤く目立たせる場合 */
+.highlight-num {
+  color: #e53e3e;
+  font-weight: 700;
+}
