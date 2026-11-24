@@ -1206,17 +1206,13 @@ footer a:hover,
 .hashtag-link:hover {
   opacity: 0.75;
 }
-/* 案内手順の画像スタイル */
-.guide-steps p {
-  margin-bottom: 0.6rem;
-}
-
+/* 案内手順の画像スタイル（中央寄せ） */
 .guide-img {
   display: block;
   width: 100%;
-  max-width: 320px; /* 大きくなりすぎないよう調整（お好みで変更OK） */
+  max-width: 320px; /* お好みのサイズに調整してください */
   height: auto;
-  margin: 0.5rem 0 1.4rem;
+  margin: 0.5rem auto 1.4rem; /* 左右を auto にすることで中央寄せ！ */
   border-radius: 14px;
   border: 2px solid #ffffff;
   box-shadow: 0 6px 16px rgba(126, 200, 227, 0.2);
