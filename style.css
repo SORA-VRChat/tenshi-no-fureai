@@ -1185,3 +1185,24 @@ footer a:hover,
 .schedule-info-link:hover {
   opacity: 0.75;
 }
+/* Informationページ：ハッシュタグ検索リンクのデザイン */
+.hashtag-link {
+  color: #5aa9e6;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: opacity 0.2s;
+}
+
+.hashtag-link::after {
+  content: '↗';
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.hashtag-link:hover {
+  opacity: 0.75;
+}
