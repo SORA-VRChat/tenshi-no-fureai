@@ -26,23 +26,14 @@
       <h2 class="section-title">開店スケジュール</h2>
       <img src="assets/heart_line.png" alt="ハートの飾り線" class="section-line">
     </div>
-      <p style="text-align: center;">最新の開店情報は公式X（旧Twitter）でもお知らせしています。</p>
+    <p style="text-align: center; margin-bottom: 1.5rem;">最新の開店情報は公式X（旧Twitter）でもお知らせしています。</p>
 
-      <div class="schedule-item">
-        <span class="schedule-date">2026.11.22 (日) 22:00〜23:30</span>
-        <div>
-          <strong>第1回 グランドオープン「はじめてのふれあい」</strong>
-          <p style="margin:0; font-size:0.9rem;">記念すべき初回営業です！特製オムライスとおまじないドリンクをご用意してお待ちしております。</p>
-        </div>
-      </div>
+    <div class="card top-schedule-card" style="max-width: 820px; margin: 0 auto;">
+      <!-- ↓ schedule-data.js から自動で全件表示されます -->
+      <div id="full-schedule-container" class="mini-schedule-list"></div>
+    </div>
 
-      <div class="schedule-item">
-        <span class="schedule-date">2026.12.24 (木) 22:00〜23:30</span>
-        <div>
-          <strong>クリスマス特別営業「星降る夜の天使たち」</strong>
-          <p style="margin:0; font-size:0.9rem;">聖夜限定の特別衣装＆スイーツメニューでお迎えいたします。</p>
-        </div>
-      </div>
+    <script src="schedule-data.js"></script>
   </main>
 
   <footer>
