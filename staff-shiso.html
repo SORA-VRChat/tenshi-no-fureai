@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>しそ | てんしのふれあい</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">てんしのふれあい <i>Angelic touch</i></a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="schedule.html">Event Schedule</a>
+      <a href="character.html" class="active">Cast</a>
+      <a href="information.html">Information</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cast-detail">
+      <div class="cast-detail-img">
+        <img src="assets/detail-10.png" alt="しそ">
+      </div>
+
+      <div class="card cast-detail-card">
+        <div class="cast-detail-layout">
+          
+          <!-- 左側：3枚切り替えスライドショー -->
+          <div class="cast-photo-col">
+            <div class="photo-main-wrap">
+              <button type="button" class="slider-btn prev" onclick="changeSlide(-1)" aria-label="前の写真">‹</button>
+              <div class="photo-frame">
+                <img id="mainCastImg" src="assets/shiso-01.png" alt="しそ 写真1">
+              </div>
+              <button type="button" class="slider-btn next" onclick="changeSlide(1)" aria-label="次の写真">›</button>
+            </div>
+
+            <div class="photo-thumbs">
+              <img src="assets/shiso-01.png" alt="写真1" class="thumb active" onclick="setSlide(0)">
+              <img src="assets/shiso-02.png" alt="写真2" class="thumb" onclick="setSlide(1)">
+              <img src="assets/shiso-03.png" alt="写真3" class="thumb" onclick="setSlide(2)">
+            </div>
+          </div>
+
+          <!-- 右側：名前・プロフィール -->
+          <div class="cast-info-col">
+            <h2>しそ</h2>
+
+            <div class="cast-profile-list">
+              <div class="profile-row"><span>誕生日</span><span>5月5日</span></div>
+              <div class="profile-row"><span>趣味</span><span>エルデンリング</span></div>
+              <div class="profile-row"><span>X (Twitter)</span><span><a href="https://x.com/cycasin" target="_blank" rel="noopener">@cycasin</a></span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="back-btn-wrap">
+          <a href="character.html" class="back-btn">← キャスト一覧へ戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>てんしのふれあい <i>Angelic touch</i></p>
+    <div class="footer-sns">
+      <a href="https://x.com/flare_cafe_" target="_blank" rel="noopener" class="sns-btn">
+        𝕏 公式X（@flare_cafe_）
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const castImages = [
+      "assets/shiso-01.png",
+      "assets/shiso-02.png",
+      "assets/shiso-03.png"
+    ];
+    let currentSlide = 0;
+
+    function setSlide(index) {
+      currentSlide = index;
+      document.getElementById("mainCastImg").src = castImages[currentSlide];
+      document.querySelectorAll(".photo-thumbs .thumb").forEach((el, i) => {
+        el.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    function changeSlide(step) {
+      currentSlide = (currentSlide + step + castImages.length) % castImages.length;
+      setSlide(currentSlide);
+    }
+  </script>
+</body>
+</html>
