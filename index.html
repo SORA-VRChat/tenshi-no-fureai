@@ -43,19 +43,8 @@
       </div>
 
       <div class="card top-schedule-card">
-        <div class="mini-schedule-list">
-          
-          <!-- 営業日 1 -->
-          <div class="mini-schedule-item">
-            <div class="mini-date-wrap">
-              <span class="mini-badge">次回営業</span>
-              <span class="mini-date">11月30日(月) 22:00〜</span>
-            </div>
-            <div class="mini-detail">
-              <span class="mini-cast">出勤：きさら・くらげ・ここのん・そら・ねむ</span>
-              <span class="mini-note">通常お給仕営業（グループインスタンスにて開催）</span>
-            </div>
-          </div>
+        <!-- ↓ schedule-data.js から自動で1件表示されます -->
+        <div id="top-schedule-container" class="mini-schedule-list"></div>
 
         <!-- 詳細スケジュール＆参加方法への誘導ボタン -->
         <div class="top-schedule-actions">
@@ -68,6 +57,8 @@
         </div>
       </div>
     </section>
+
+    <script src="schedule-data.js"></script>
 
     <!-- ABOUT -->
     <section id="about" class="card">
